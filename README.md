@@ -335,8 +335,8 @@ That way the UI library is free to choose when it's best to load a component, co
 The best you can do today with standard:
 
 ```js
-import {createElement, createWrapper} from "react";
-const MyOtherComponent = createWrapper(() => import("other-component"));
+import {createElement, lazy} from "react";
+const MyOtherComponent = lazy(() => import("other-component"));
 
 function MyComponent() {
   return createElement(MyOtherComponent, {
